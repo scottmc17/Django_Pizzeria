@@ -3,6 +3,9 @@
 {% block content %}
 <p>Pizza: {{ pizza.name }}</p>
 
+<p>
+    <a href="{% url 'pizzas:new_topping' pizza.id %}">Add new topping</a>
+</p>
 <ul>
 
     {% for t in toppings %}
