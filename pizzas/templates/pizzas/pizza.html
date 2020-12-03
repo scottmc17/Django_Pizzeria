@@ -5,15 +5,24 @@
 
 <p>
     <a href="{% url 'pizzas:new_topping' pizza.id %}">Add new topping</a>
+
+  
 </p>
+
+
 <ul>
+
 
     {% for t in toppings %}
 
         <li>
-            <p>{{ t.date_added }}</p>
+            <p>{{ t.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ t.topping|linebreaks }}</p>
+            
+            <p>
+                <a href="{% url 'pizzas:edit_topping' t.id %}">Edit</a>
+            </p>
 
-            <p>{{ t.topping }}</p>
         </li>
 
         {% empty %}
@@ -21,6 +30,27 @@
 
         {% endfor %}
 </ul>
+
+<!-- <ul>
+    {% for comment in comments %}
+
+    <li>
+        <p>{{ comment.text|linebreaks }}</p>
+
+    </li>
+    {% empty %}
+
+        <li>No comments for this pizza have been added yet.</li>
+
+    {% endfor %}
+
+</li>
+
+</ul>
+
+<p>
+    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a new comment</a>
+</p> -->
 
 
 {% endblock content %}
