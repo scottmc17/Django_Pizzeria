@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # my apps
     'pizzas',
     'users',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
